@@ -18,5 +18,3 @@ format:
     toc: true
     number-sections: true
     pdf-engine: lualatex # Or 'xelatex', 'pdflatex'
-  epub:
-    cover-image: cover.png # Optional: Path to a cover image for EPUB
