@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: "My Awesome Book"
+  author: "Jane Doe"
+  date: today
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme: cosmo # Or another theme like 'flatly', 'journal', etc.
+    toc: true
+    toc-depth: 2
+  pdf:
+    documentclass: scrreprt # Or 'article', 'book', etc.
+    toc: true
+    number-sections: true
+    pdf-engine: lualatex # Or 'xelatex', 'pdflatex'
+  epub:
+    cover-image: cover.png # Optional: Path to a cover image for EPUB
