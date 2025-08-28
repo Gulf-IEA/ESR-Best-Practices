@@ -1,7 +1,7 @@
 # Outline
 
 ```{=html}
-<iframe src="https://embed.kumu.io/92da3e67c6ceea5d5bb6bef6ade19939" width="940" height="600" frameborder="0"></iframe>
+<iframe src="https://embed.kumu.io/92da3e67c6ceea5d5bb6bef6ade19939" width="1200" height="800" frameborder="0"></iframe>
 ```
 
 ## Naming conventions
