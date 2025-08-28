@@ -125,9 +125,11 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline"><span class="header-section-number">1</span> Outline</a>
   <ul class="collapse">
-  <li><a href="#starting-a-new-esr-updating-a-previous-one" id="toc-starting-a-new-esr-updating-a-previous-one" class="nav-link" data-scroll-target="#starting-a-new-esr-updating-a-previous-one"><span class="header-section-number">1.1</span> Starting a new ESR / updating a previous one</a></li>
-  <li><a href="#indicator-scoping" id="toc-indicator-scoping" class="nav-link" data-scroll-target="#indicator-scoping"><span class="header-section-number">1.2</span> Indicator scoping</a></li>
-  <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing"><span class="header-section-number">1.3</span> Data processing</a></li>
+  <li><a href="#naming-conventions" id="toc-naming-conventions" class="nav-link" data-scroll-target="#naming-conventions"><span class="header-section-number">1.1</span> Naming conventions</a></li>
+  <li><a href="#starting-a-new-esr-updating-a-previous-one" id="toc-starting-a-new-esr-updating-a-previous-one" class="nav-link" data-scroll-target="#starting-a-new-esr-updating-a-previous-one"><span class="header-section-number">1.2</span> Starting a new ESR / updating a previous one</a></li>
+  <li><a href="#indicator-scoping" id="toc-indicator-scoping" class="nav-link" data-scroll-target="#indicator-scoping"><span class="header-section-number">1.3</span> Indicator scoping</a></li>
+  <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing"><span class="header-section-number">1.4</span> Data processing</a></li>
+  <li><a href="#report-writing" id="toc-report-writing" class="nav-link" data-scroll-target="#report-writing"><span class="header-section-number">1.5</span> Report writing</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,8 +170,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="outline" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Outline</h1>
-<section id="starting-a-new-esr-updating-a-previous-one" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="starting-a-new-esr-updating-a-previous-one"><span class="header-section-number">1.1</span> Starting a new ESR / updating a previous one</h2>
+<section id="naming-conventions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="naming-conventions"><span class="header-section-number">1.1</span> Naming conventions</h2>
+<p>Add a table here with all of our outputs/products, how they are named, and an example</p>
+</section>
+<section id="starting-a-new-esr-updating-a-previous-one" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="starting-a-new-esr-updating-a-previous-one"><span class="header-section-number">1.2</span> Starting a new ESR / updating a previous one</h2>
 <p>If you are making an ESR from scratch, step one is to go to the ESR-Report-Template repository in the Gulf-IEA Github organization and click “use this template”. Re-name the new repository xxx-ESR (e.g., Gulf-ESR, SA-ESR, Caribbean-ESR, Wind-ESR, etc.). You will also need to go to the projects tab for the Gulf-IEA organization and create a new project from the template “Indicator scoping” project. Name the project “Indicator scoping [report]” (e.g., “Indicator scoping Gulf”, “Indicator scoping Caribbean”, etc.) and link that project to your new repository.</p>
 <p>If you are updating an existing ESR, go to the repository for that ESR (e.g., Caribbean-ESR), make sure the previous version was tagged by checking the tags in the main branch. From there, go to the Indicator scoping project linked to the repository. Change everything in the “selected” column to maybe for all listed metrics. Change everything in the “Code reviewer name”, “Code reviewed”, and “Production form submitted” columns back to blank.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -186,10 +192,10 @@ Note
 </div>
 </div>
 </section>
-<section id="indicator-scoping" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="indicator-scoping"><span class="header-section-number">1.2</span> Indicator scoping</h2>
-<section id="compiling-ideas" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="compiling-ideas"><span class="header-section-number">1.2.1</span> Compiling ideas</h3>
+<section id="indicator-scoping" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="indicator-scoping"><span class="header-section-number">1.3</span> Indicator scoping</h2>
+<section id="compiling-ideas" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="compiling-ideas"><span class="header-section-number">1.3.1</span> Compiling ideas</h3>
 <p>If you think of ideas for a new metric or someone you talk to suggests a metric, go to the issues tab and create a new issue. Use the “Metric Idea Form” issue template. Fill out as much information as you can, leaving entries blank as needed. Anyone can fill this form out with an idea. If you already know the data do not exist or are extremely limited, you can note that. You should ideally know where the data exist so you can note that on the form before we decide to include the metric. If you identify data online, you should test that it can be downloaded and everything looks kosher. If you need to run any code just to check/download the data and take a preliminary look at what it is, you can make a script and put it in the sandbox/prelim_code folder. Make sure to link the script/code in the comments of the metric idea issue corresponding to that metric.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -205,16 +211,90 @@ Important
 </div>
 </div>
 </section>
-<section id="metric-selection" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="metric-selection"><span class="header-section-number">1.2.2</span> Metric selection</h3>
-<p>Once the project board is filled with ideas and the appropriate people / teams have been consulted about metric ideas, the IEA team will meet to go over the list of metric ideas and decide which ones to include in the ESR and which ones not to. By the end of this meeting, all the metrics that will be included will have the selected category changed to “yes”, everything else will be changed to “no” if the metric is not going to be used in the current report. Also, each metric will be assigned to an IEA POC by the end of the meeting.</p>
+<section id="metric-selection" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="metric-selection"><span class="header-section-number">1.3.2</span> Metric selection</h3>
+<p>Once the project board is filled with ideas and the appropriate people / teams have been consulted about metric ideas, the IEA team will meet to go over the list of metric ideas and decide which ones to include in the ESR and which ones not to. By the end of this meeting, all the metrics that will be included will have the selected category changed to “yes”, everything else will be changed to “no” if the metric is not going to be used in the current report. Also, each metric will be assigned to an IEA POC by the end of the meeting. Make sure a root name has been created for each metric and documented in the project.</p>
 </section>
 </section>
-<section id="data-processing" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="data-processing"><span class="header-section-number">1.3</span> Data processing</h2>
+<section id="data-processing" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="data-processing"><span class="header-section-number">1.4</span> Data processing</h2>
 <p>If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.</p>
 <p><strong>STEP 1:</strong> Identify the data type (automated, non-automated, or confidential)</p>
-<p><strong>STEP 1:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form)</p>
+<p><strong>STEP 2:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form). Within the new branch, create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Call the file [root_name_formatting].R (or [root_name_formatting].qmd).</p>
+<p><strong>STEP 3:</strong> In your R script, first call the code snippet for your particular data type, and then bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). Save the file as a csv. Data should be saved in the data/formatted/formatted_csvs folder. Once you have the csv, run it through the IEAnalyzeR data_prep function and save the output (with the same root name) to the data/formatted/final_objects. Finally, run the output of the data_prep function through the IEAnalyzeR plotting function. Save the resulting plot in the figures/plots folder. Call it [root_name].png. Consider sharing this plot with the SME or data steward if necessary.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once your code is done be sure to check off the “coded” column in the indicator scoping project.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be cognizant of others. Annotate your code. You will be expected to add a plain language version of your code to the production form to be included in the methods document. Be kind to your future self and do it now.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>include an example here of the appropriate data format.</p>
+</div>
+</div>
+<p><strong>STEP 4:</strong> One you are satisfied with your code, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once the code is checked and the branch is merged into the main branch, check off the “code checked” column in the indicator scoping project.</p>
+</div>
+</div>
+<p><strong>STEP 5:</strong> The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you go back to the indicator scoping project and check off the column called “Production form submitted”.</p>
+</div>
+</div>
+</section>
+<section id="report-writing" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="report-writing"><span class="header-section-number">1.5</span> Report writing</h2>
+<p><strong>STEP 1:</strong> The IEA indicator development team (IEA lab group) meets to go over all the metrics and decide how to turn the metrics into indicators and how to structure the report (sections, order, etc.)</p>
+<p><strong>STEP 2:</strong> Send the Report Text Google Form to SMEs / data stewards / whoever is best suited to writing about the metric/indicator and interpreting the plot.</p>
+<p><strong>STEP 3:</strong> The Quarto Book Master creates the quarto book files, updates the YAML, etc. Run the template R code to pull the text data from the google form and combine it with the code chunks to create the indicator plots in the qmd files.</p>
 
 
 </section>
