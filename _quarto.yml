@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "My Awesome Book"
-  author: "Jane Doe"
+  title: "Ecosystem Status Report Best Practices Document"
+  author: "Gulf IEA"
   date: today
   chapters:
     - index.qmd
