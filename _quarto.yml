@@ -7,6 +7,7 @@ book:
   date: today
   chapters:
     - index.qmd
+    - Glossary.qmd
 
 format:
   html:
