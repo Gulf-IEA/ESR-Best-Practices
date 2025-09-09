@@ -2,51 +2,49 @@
 title: "Glossary"
 ---
 
-# ESR Production Process Glossary
-
--   Automated
+-   **Automated**
     -   Data that can be downloaded using an API or online database.\
--   Coded
+-   **Coded**
     -   An R script (or Python) that can be used to download the data and has been successfully tested.\
--   Code Review
+-   **Code Review**
     -   During the metric idea process, an additional IEA team member is needed to review the code and ensure it meets the requirements. This will be initiated as a pull request in GitHub, and a reviewer will be assigned. The reviewer will need to test the code and approve the branch merge. The reviewer also needs to make the indicator plot and review the plot as a gut check.\
--   Confidential
+-   **Confidential**
     -   Data containing sensitive personal or financial information that requires aggregation before public release; any person working with unaggregated data must have a non-disclosure agreement on file.\
--   Data Access Point
+-   **Data Access Point**
     -   Person or website service where data can be accessed or downloaded (e.g., ERDDAP)\
--   Data Acquired
+-   **Data Acquired**
     -   You have downloaded all the data necessary to create the metric for full production.\
--   Data Identified
+-   **Data Identified**
     -   You have found a data source (e.g., API, data POC, or other) but have not downloaded the data; however, you may have attempted to access or downloaded some of the data.\
--   Data Source
+-   **Data Source**
     -   Program, lab, or person that produces the data (e.g., NASA).\
--   Data Steward
+-   **Data Steward**
     -   Person most directly associated with the data; can be an external SME, but not necessarily.\
--   Data type
+-   **Data type**
     -   Categories of data based on ease of download or level of confidentiality.\
--   External SME
+-   **External SME**
     -   Non-IEA member subject matter expert.\
--   IEA POC / Responsible Member
+-   **IEA POC / Responsible Member**
     -   IEA member overseeing the indicator/metric.\
--   Indicator
+-   **Indicator**
     -   Usually, the metric, but it could have multiple metrics.\
--   Indicator Directory
+-   **Indicator Directory**
     -   A list of all indicators used by the SE-IEA for all past ESRs. This is called the 'Indicator Catalog' by the NEFSC.\
--   Methods Document
+-   **Methods Document**
     -   Specific to each ESR produced, and contains the methods for each data, metric, and indicator used. The information will come from the Metric Production Form. This is called the 'Technical Document' by the NEFSC.\
--   Metric
+-   **Metric**
     -   The smallest unit of an indicator or analysis.\
--   Metric Idea Form
+-   **Metric Idea Form**
     -   Issue template to be filled out in GitHub repository for current ESR to scope out new metric for upcoming ESR; to be filled out by IEA POC (or potentially external SME if GitHub proficient); once completely filled out, then it can be transferred into the production form.\
--   Metric Production Form
+-   **Metric Production Form**
     -   Issue template to be filled out in GitHub repository for current ESR to document metric for upcoming ESR; to be filled out by IEA POC; this will directly feed into the Methods Document.\
--   Non-automated
+-   **Non-automated**
     -   Data that you have to email someone to get; this data, once received, goes to the unformatted data folder.\
--   Quarto Book Master
+-   **Quarto Book Master**
     -   The one person who is responsible for the report creation and the one who is creating and updating the Quarto files. Only one person will be doing this, so there are no merge conflicts. This person will still call on others to help in report creation.\
--   Sandbox
+-   **Sandbox**
     -   Folder in ESR repo that holds preliminary code or other code in progress that don't fit elsewhere; you will find some poop and an old action figure missing a limb or two.\
--   Scouted
+-   **Scouted**
     -   Part of the metric ideation process, the IEA POC, or the person who initially had the idea for the metric and filled out the metric idea form, will have done some initial research on the data and outlined the details (e.g., data availability, data download websites, external POCs).\
--   Unformatted data
+-   **Unformatted data**
     -   Data that is downloaded from an online source, database, or email as is. Data will not be processed for this.
