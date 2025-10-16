@@ -46,11 +46,13 @@ If an IEA POC has been assigned a metric, it is their job to either create the c
 
 **STEP 3:** Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. If you do not have IEAnalyzeR installed you will need to install it:
 
-```
+```{r}
+#| eval: false
 install.packages("devtools")
 library(devtools)
-devtools::install_github("Gulf-IEA/IEAnalyzeR)
+devtools::install_github("Gulf-IEA/IEAnalyzeR")
 ```
+
 The new script file will be created in the appropriate folder. 
 
 **STEP 4:** In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location. 
