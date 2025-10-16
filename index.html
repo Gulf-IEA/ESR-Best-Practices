@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gulf IEA">
-<meta name="dcterms.date" content="2025-10-07">
+<meta name="dcterms.date" content="2025-10-16">
 
 <title>Ecosystem Status Report Best Practices Document</title>
 <style>
@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 7, 2025</p>
+      <p class="date">October 16, 2025</p>
     </div>
   </div>
   
@@ -245,7 +245,11 @@ Note
 <p>If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.</p>
 <p><strong>STEP 1:</strong> Identify the data type (automated, non-automated, or confidential)</p>
 <p><strong>STEP 2:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form).</p>
-<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder.</p>
+<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. If you do not have IEAnalyzeR installed you will need to install it:</p>
+<pre><code>install.packages("devtools")
+library(devtools)
+devtools::install_github("Gulf-IEA/IEAnalyzeR)</code></pre>
+<p>The new script file will be created in the appropriate folder.</p>
 <p><strong>STEP 4:</strong> In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
