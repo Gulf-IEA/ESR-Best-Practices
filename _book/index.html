@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gulf IEA">
-<meta name="dcterms.date" content="2025-10-16">
+<meta name="dcterms.date" content="2025-10-17">
 
 <title>Ecosystem Status Report Best Practices Document</title>
 <style>
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2025</p>
+      <p class="date">October 17, 2025</p>
     </div>
   </div>
   
@@ -210,7 +210,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="outline" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Outline</h1>
-<iframe src="https://embed.kumu.io/294e036504babe5f168f5b0b0c8e4a80" width="940" height="600" frameborder="0"></iframe>
+<iframe src="https://embed.kumu.io/0661ee59f5ab7039503ffa8830eb1376?scroll=1" width="940" height="600" frameborder="0"></iframe>
+<section id="how-to-interact-with-the-map" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="how-to-interact-with-the-map"><span class="header-section-number">1.0.1</span> How to Interact with the Map</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Map Interaction Guide
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This map is fully interactive. Use the following steps to explore the system:</p>
+<ol type="1">
+<li><strong>Zoom and Pan:</strong> Use your mouse scroll wheel/trackpad to zoom in and out. Click and drag the map background to pan.</li>
+<li><strong>View Profiles:</strong> <strong>Click any element (node)</strong> to open its profile on the side panel, which contains detailed information.</li>
+<li><strong>Focus on a Node:</strong> Use the <strong>magnifying glass icon</strong> on the map’s toolbar to search for a specific element, or click the <strong>Focus button</strong>, which pops up on the lower right of the side panel when you click on an element, to highlight that element and its immediate connections.</li>
+</ol>
+</div>
+</div>
+</section>
 <section id="naming-conventions" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="naming-conventions"><span class="header-section-number">1.1</span> Naming conventions</h2>
 <p>Add a table here with all of our outputs/products, how they are named, and an example</p>
@@ -275,13 +296,13 @@ Note
 <p>If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.</p>
 <p><strong>STEP 1:</strong> Identify the data type (automated, non-automated, or confidential)</p>
 <p><strong>STEP 2:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form).</p>
-<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. If you do not have IEAnalyzeR installed you will need to install it:</p>
+<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Gulf-IEA/IEAnalyzeR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The new script file will be created in the appropriate folder.</p>
+<p>Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder.</p>
 <p><strong>STEP 4:</strong> In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

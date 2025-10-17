@@ -1,8 +1,17 @@
 # Outline
 
 ```{=html}
-<iframe src="https://embed.kumu.io/294e036504babe5f168f5b0b0c8e4a80" width="940" height="600" frameborder="0"></iframe>
+<iframe src="https://embed.kumu.io/abc188f1d164b27c434c6706cad4706a?scroll=1" width="940" height="600" frameborder="0"></iframe>
 ```
+
+::: {.callout-note}
+#### Map Interaction Guide
+This map is fully interactive. Use the following steps to explore the system:
+
+1.  **Zoom and Pan:** Use your mouse scroll wheel/trackpad to zoom in and out. Click and drag the map background to pan.
+2.  **View Profiles:** **Click any element (node)** to open its profile on the side panel, which contains detailed information.
+3.  **Focus on a Node:** Use the **magnifying glass icon** on the map's toolbar to search for a specific element, or click the **Focus button**, which pops up on the lower right of the side panel when you click on an element, to highlight that element and its immediate connections.
+:::
 
 ## Naming conventions
 
