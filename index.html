@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gulf IEA">
-<meta name="dcterms.date" content="2025-10-16">
+<meta name="dcterms.date" content="2025-10-17">
 
 <title>Ecosystem Status Report Best Practices Document</title>
 <style>
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -166,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2025</p>
+      <p class="date">October 17, 2025</p>
     </div>
   </div>
   
@@ -245,11 +280,13 @@ Note
 <p>If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.</p>
 <p><strong>STEP 1:</strong> Identify the data type (automated, non-automated, or confidential)</p>
 <p><strong>STEP 2:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form).</p>
-<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. If you do not have IEAnalyzeR installed you will need to install it:</p>
-<pre><code>install.packages("devtools")
-library(devtools)
-devtools::install_github("Gulf-IEA/IEAnalyzeR)</code></pre>
-<p>The new script file will be created in the appropriate folder.</p>
+<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Gulf-IEA/IEAnalyzeR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder.</p>
 <p><strong>STEP 4:</strong> In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
