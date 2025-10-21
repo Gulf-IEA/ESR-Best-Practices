@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gulf IEA">
-<meta name="dcterms.date" content="2025-10-17">
+<meta name="dcterms.date" content="2025-10-21">
 
 <title>Ecosystem Status Report Best Practices Document</title>
 <style>
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3584025bd2775ba93d20b6dabf7256d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2025</p>
+      <p class="date">October 21, 2025</p>
     </div>
   </div>
   
@@ -298,14 +298,29 @@ Note
 <p>If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.</p>
 <p><strong>STEP 1:</strong> Identify the data type (automated, non-automated, or confidential)</p>
 <p><strong>STEP 2:</strong> Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form).</p>
-<p><strong>STEP 3:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:</p>
+<p><strong>STEP 3:</strong> <u><strong>CRUCIAL:</strong></u> verify your R version. You must ensure your R studio session for this project is running the version that is listed in the renv.lock file in the main branch. If you really need to use a different R version, you will need to update the renv.lock file in the main branch, and all collaborators will need to use the same R version when working in the repo. Instructions for changing the R version in the main branch can be found HERE.</p>
+<p><strong>Step 4:</strong> Read the renv.lock file from the main branch to ensure all the compatible packages are in the branch’s local library using the following code:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Gulf-IEA/IEAnalyzeR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>STEP 5:</strong> Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Gulf-IEA/IEAnalyzeR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder.</p>
-<p><strong>STEP 4:</strong> In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.</p>
+<p><strong>STEP 6:</strong> In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.</p>
+<p><strong>STEP 7:</strong> When you finish working on your branch and are ready to push it to main, you first need to check if you installed any additional packages that are not already in the renv.lock file (run the code below to check). If so, you will need to snapshot the new dependencies and then commit and push before you initiate a pull request.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#First check if there are packages in your branch that are not in the lock file:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#If there are new packages, you need to snapshot the dependencies:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Accept the prompt to update the lock file. Commit and push the new lock file.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -345,7 +360,7 @@ Note
 <p>include an example here of the appropriate data format.</p>
 </div>
 </div>
-<p><strong>STEP 4:</strong> One you are satisfied with your code, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC.</p>
+<p><strong>STEP 8:</strong> One you are satisfied with your code and you have ensured the renv.lock file is updated, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -359,7 +374,7 @@ Note
 <p>Once the code is checked and the branch is merged into the main branch, check off the “code checked” column in the indicator scoping project.</p>
 </div>
 </div>
-<p><strong>STEP 5:</strong> The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form.</p>
+<p><strong>STEP 9:</strong> The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
