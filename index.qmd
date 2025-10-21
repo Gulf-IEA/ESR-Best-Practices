@@ -4,8 +4,9 @@
 <iframe src="https://embed.kumu.io/abc188f1d164b27c434c6706cad4706a?scroll=1" width="940" height="600" frameborder="0"></iframe>
 ```
 
-::: {.callout-note}
+::: callout-note
 #### Map Interaction Guide
+
 This map is fully interactive. Use the following steps to explore the system:
 
 1.  **Zoom and Pan:** Use your mouse scroll wheel/trackpad to zoom in and out. Click and drag the map background to pan.
@@ -51,9 +52,18 @@ If an IEA POC has been assigned a metric, it is their job to either create the c
 
 **STEP 1:** Identify the data type (automated, non-automated, or confidential)
 
-**STEP 2:** Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form). 
+**STEP 2:** Create a new branch and name it the root name for the metric (the root name is designated in the metric idea form).
 
-**STEP 3:** Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:
+**STEP 3:** [**CRUCIAL:**]{.underline} verify your R version. You must ensure your R studio session for this project is running the version that is listed in the renv.lock file in the main branch. If you really need to use a different R version, you will need to update the renv.lock file in the main branch, and all collaborators will need to use the same R version when working in the repo. Instructions for changing the R version in the main branch can be found HERE. 
+
+**Step 4:** Read the renv.lock file from the main branch to ensure all the compatible packages are in the branch's local library using the following code:
+
+```{r}
+#| eval: false
+renv::restore()
+```
+
+**STEP 5:** Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. If you do not have IEAnalyzeR installed you will need to install it:
 
 ```{r}
 #| eval: false
@@ -62,9 +72,22 @@ library(devtools)
 devtools::install_github("Gulf-IEA/IEAnalyzeR")
 ```
 
-Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder. 
+Use the appropriate template (metric_code_template.R or metric_code_template.qmd). These templates can be found in scripts/other/templates and will be called using the create_metric_code_file function. To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder.
 
-**STEP 4:** In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location. 
+**STEP 6:** In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.
+
+**STEP 7:** When you finish working on your branch and are ready to push it to main, you first need to check if you installed any additional packages that are not already in the renv.lock file (run the code below to check). If so, you will need to snapshot the new dependencies and then commit and push before you initiate a pull request.
+
+```{r}
+#| eval: false
+#First check if there are packages in your branch that are not in the lock file:
+renv::status()
+
+#If there are new packages, you need to snapshot the dependencies:
+renv::snapshot()
+
+#Accept the prompt to update the lock file. Commit and push the new lock file.
+```
 
 ::: callout-note
 Once your code is done be sure to check off the "coded" column in the indicator scoping project.
@@ -78,13 +101,13 @@ Be cognizant of others. Annotate your code. You will be expected to add a plain 
 include an example here of the appropriate data format.
 :::
 
-**STEP 4:** One you are satisfied with your code, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC. 
+**STEP 8:** One you are satisfied with your code and you have ensured the renv.lock file is updated, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC.
 
 ::: callout-note
 Once the code is checked and the branch is merged into the main branch, check off the "code checked" column in the indicator scoping project.
 :::
 
-**STEP 5:** The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form. 
+**STEP 9:** The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form.
 
 ::: callout-note
 Make sure you go back to the indicator scoping project and check off the column called "Production form submitted".
@@ -97,10 +120,3 @@ Make sure you go back to the indicator scoping project and check off the column 
 **STEP 2:** Send the Report Text Google Form to SMEs / data stewards / whoever is best suited to writing about the metric/indicator and interpreting the plot.
 
 **STEP 3:** The Quarto Book Master creates the quarto book files, updates the YAML, etc. Run the template R code to pull the text data from the google form and combine it with the code chunks to create the indicator plots in the qmd files.
-
-
-
-
-
-
-
