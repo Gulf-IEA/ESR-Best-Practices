@@ -1,0 +1,12 @@
+---
+title: "Start Here"
+editor: visual
+---
+
+If you are making an ESR from scratch, step one is to go to the ESR-Report-Template repository in the Gulf-IEA Github organization and click "use this template". Re-name the new repository xxx-ESR (e.g., Gulf-ESR, SA-ESR, Caribbean-ESR, Wind-ESR, etc.). You will also need to go to the projects tab for the Gulf-IEA organization and create a new project from the template "Indicator scoping" project. Name the project "Indicator scoping \[report\]" (e.g., "Indicator scoping Gulf", "Indicator scoping Caribbean", etc.) and link that project to your new repository.
+
+If you are updating an existing ESR, go to the repository for that ESR (e.g., Caribbean-ESR), make sure the previous version was tagged by checking the tags in the main branch. From there, go to the Indicator scoping project linked to the repository. Change everything in the "selected" column to maybe for all listed metrics. Change everything in the "Code reviewer name", "Code reviewed", and "Production form submitted" columns back to blank.
+
+::: callout-note
+Note: Here we should add some screenshots showing where things are and what to select.
+:::

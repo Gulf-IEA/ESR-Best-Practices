@@ -1,0 +1,10 @@
+---
+title: "Report Writing"
+editor: visual
+---
+
+**STEP 1:** The IEA indicator development team (IEA lab group) meets to go over all the metrics and decide how to turn the metrics into indicators and how to structure the report (sections, order, etc.)
+
+**STEP 2:** Send the Report Text Google Form to SMEs / data stewards / whoever is best suited to writing about the metric/indicator and interpreting the plot.
+
+**STEP 3:** The Quarto Book Master creates the quarto book files, updates the YAML, etc. Run the template R code to pull the text data from the google form and combine it with the code chunks to create the indicator plots in the qmd files.

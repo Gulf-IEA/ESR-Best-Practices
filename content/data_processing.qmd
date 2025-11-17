@@ -1,0 +1,72 @@
+---
+title: "Data Processing"
+editor: visual
+---
+
+If an IEA POC has been assigned a metric, it is their job to either create the code, or find and adapt existing code, or re-run existing code to update for a new year. If it is important to consult with SMEs or data stewards, that is the responsibility of the IEA POC.
+
+**STEP 1:** [**CRUCIAL:**]{.underline} verify your R version. You must ensure your R studio session for this project is running the version that is listed in the renv.lock file in the main branch. If you really need to use a different R version, you will need to update the renv.lock file in the main branch, and all collaborators will need to use the same R version when working in the repo. Instructions for changing the R version in the main branch can be found HERE. 
+
+**STEP 2:** Either clone the repository to your local machine or if you already have it, make sure to run git pull from the main branch before starting work in the new branch to ensure everything is up to date. Then restart your R session. Read the renv.lock file from the main branch to ensure all the compatible packages are in the branch's local library using the following code:
+
+```{r}
+#| eval: false
+renv::restore()
+```
+
+This step may take a while, since it will install all the packages and package dependencies used in the repo. The benefit of this is that you will not need to install any packages to run any of the code in the repo. You will just need to call packages using the library function. The renv.lock file ensures the code will always run with the R and package versions it was created with. 
+
+**STEP 3:** Once the main branch is up to date on your local machine, create a new branch and name it the root name for the metric (the root name should be designated in the metric idea form). Switch to that branch in R studio.
+
+**STEP 4:** Identify the data type (automated, non-automated, or confidential)
+
+**STEP 5:** Within the new branch, use the create_metric_code_file function in IEAnalyzeR to create an R script (or quarto doc if you prefer) within the appropriate scripts/metrics folder based on your data type. Use the appropriate template (metric_code_template.R or metric_code_template.qmd). To use the function, specify the metric name, format of the file (R or qmd), and data type. Best practice is to run the code for the function in your console. The new script file will be created in the appropriate folder. (If for some reason you need to edit the templates, they can be found in scripts/other/templates).
+
+**STEP 6:** In your R script or qmd file, follow the template prompts to load your necessary packages and bring in the data/call the data from an online source, do whatever data manipulations/analysis are needed, and convert to the standard IEA data format (see example below). The template will prompt you to save the data in the appropriate format and location.
+
+::: callout-important
+Be cognizant of others. Annotate your code. You will be expected to add a plain language version of your code to the production form to be included in the methods document. Be kind to your future self and do it now.
+:::
+
+**STEP 7:** When you finish working on your branch and are ready to push it to main, you first need to check if you installed any additional packages that are not already in the renv.lock file (run the code below to check). If so, you will need to snapshot the new dependencies and then commit and push before you initiate a pull request.
+
+```{r}
+#| eval: false
+#First check if there are packages in your branch that are not in the lock file:
+renv::status()
+
+#If there are new packages, you need to snapshot the dependencies:
+renv::snapshot()
+
+#Accept the prompt to update the lock file. Commit and push the new lock file.
+```
+
+::: callout-tip
+You might run into an issue with the renv/activate.R file when trying to push to github. This file ensures your R session is configured correctly to work with renv. However, it can sometimes be modified when a local renv version is updated, leading to a Git conflict. Since it is just an autoloader script, it is usually safe to overwrite your local version with the version from Github. To do so, just run the following in your Git terminal to discard the local changes:
+
+```{bash}
+#| eval: false
+git checkout renv/activate.R
+```
+
+:::
+
+::: callout-note
+Once your code is done be sure to check off the "coded" column in the indicator scoping project.
+:::
+
+::: callout-note
+include an example here of the appropriate data format.
+:::
+
+**STEP 8:** One you are satisfied with your code and you have ensured the renv.lock file is updated, do a pull request and tag another IEA POC as a reviewer. The reviewer will pull the branch, go through the script, test that the code works, check for errors, and accept the pull request once everything looks good. If there are issues, contact the IEA POC.
+
+::: callout-note
+Once the code is checked and the branch is merged into the main branch, check off the "code checked" column in the indicator scoping project.
+:::
+
+**STEP 9:** The IEA POC now fills out the metric production form for each of their assigned metrics. Some of the information can be copied from the metric idea form.
+
+::: callout-note
+Make sure you go back to the indicator scoping project and check off the column called "Production form submitted".
+:::

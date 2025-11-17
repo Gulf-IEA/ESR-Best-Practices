@@ -7,6 +7,10 @@ book:
   date: today
   chapters:
     - index.qmd
+    - content/start.qmd
+    - content/indicator_scoping.qmd
+    - content/data_processing.qmd
+    - content/report_writing.qmd
     - Glossary.qmd
 
 format:
